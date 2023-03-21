@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html id="index">
+  <head>
+    <meta charset="utf-8" />
+    <title>dbo.PaymentSettlementClaims</title>
+
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link href="../../../Style/Master.css" rel="stylesheet" type="text/css" />
+    <link href="../../../vendor/fontawesome/all.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="../../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../../../Scripts/sections.js" type="text/javascript"></script>
+    <script src="../../../Scripts/sortable.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="container">
+        <div id="top-header" class="image-text">
+          <img alt="expanded" src="../../../Images/tableCS.png" style="" />
+          <h1 style="color:gray; background-color: #ddbbff;border-radius: 6px;width: 1200px">dbo.Network_Ops_Provider_Network_Prefix_Info</h1>
+        </div>
+       
+      
+
+
+                      
+
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div>
+              <a name="columns">Table Details</a>
+            </div>
+            <div class="flex-container">
+              <div class="flex-item"><span class="mif-table"></span> Table Row Count: 120</div>
+              <div class="flex-item"><i class="fas fa-calendar-alt"></i> Created On: 2021-06-10 22:03:42</div>
+              <div class="flex-item"><i class="fas fa-calendar-alt"></i> Last Modified: 2021-06-10 22:03:42</div>
+            </div>
+    
+            <div class="flex-container">
+              <div class="flex-item" style="background-color: #33cc99"><span class="mif-table"></span> Other Details</div>
+              <div class="flex-item"><i class="fas fa-calendar-alt"></i>  Other Details</div>
+              <div class="flex-item-cap-warning">&nbsp;</div>
+              <div class="flex-item-button"></i>  Other Details</div>
+            </div>
+    
+
+          </div>
+
+
+          <div class="panel-heading">
+            <div class="expandCollapse">
+              <a name="columns">Column Specifications</a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table border="0" cellspacing="1" class="sortable" id="columnsTable">
+              <thead>
+                <tbody>
+                  <div>
+                    <tr>
+                      <th>#</th>
+                      <th>Key</th>
+                      <th>Name</th>
+                      <th>Data Type</th>
+                      <th>Max Length (Bytes)</th>
+                      <th>
+                        <div>
+                          Null Allowed
+                          <a href="#" title="Find information on the NULL option here.">
+                            <img /><i class="fa fa-question-circle fa-lg"></i>
+                          </a>
+                        </div>
+                      </th>
+                      <th>Default Value</th>
+                      <th>Identity Column</th>
+                    </tr>
+                  </div>
+                </tbody>
+                <tr class="changed">
+                  <td>
+                    <div>1</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-key text-danger"></i></div>
+                  </td>
+                  <td>
+                    <div>ID</div>
+                  </td>
+                  <td>
+                    <div>int</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>NO</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-flag text-success"></i></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>2</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>ADDED_DATE</div>
+                  </td>
+                  <td>
+                    <div>datetime</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>3</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>UPDATED_DATE</div>
+                  </td>
+                  <td>
+                    <div>datetime</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>4</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Source_File_Name</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>250</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>5</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-key  text-danger"></i></div>
+                  </td>
+                  <td>
+                    <div>Active_Indicator</div>
+                  </td>
+                  <td>
+                    <div>char</div>
+                  </td>
+                  <td>
+                    <div>25</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>6</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-project-diagram text-info"></i></div>
+                  </td>
+                  <td>
+                    <div>Prov_Prdct_State</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>25</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>7</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-project-diagram text-info"></i></div>
+                  </td>
+                  <td>
+                    <div>Program_Type</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>100</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>8</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Prov_Prdct_State_Program_Type</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>125</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>9</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-key  text-danger"></i></div>
+                  </td>
+                  <td>
+                    <div>Prov_Ntwrk_Participation_Type1</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>50</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>10</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-project-diagram text-info"></i></div>
+                  </td>
+                  <td>
+                    <div>Product_Type</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>25</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>11</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>StCd_PrgrmType_Partcptn_PrdctType</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>250</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>12</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-key  text-danger"></i></div>
+                  </td>
+                  <td>
+                    <div>Prov_Ntwrk_Pfx_Code</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>25</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>13</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-project-diagram text-info"></i></div>
+                  </td>
+                  <td>
+                    <div>Prov_Ntwrk_Pfx_Desc</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>100</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>14</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Product_Sub_Category_Dervd_Name</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>50</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>15</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>State_Prov_Ntwrk_Pfx_Desc</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>125</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>16</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Prefix_Prov_Ntwrk_Pfx_Desc</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>125</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>17</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>StCd_PrgrmType_Partcptn_PrdctType_Desc</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>250</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>18</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-project-diagram text-info"></i></div>
+                  </td>
+                  <td>
+                    <div>Entity_K</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>25</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>19</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Entity_Long_Description</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>250</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr class="changed">
+                  <td>
+                    <div>20</div>
+                  </td>
+                  <td>
+                    <div><i class="fas fa-project-diagram text-info"></i></div>
+                  </td>
+                  <td>
+                    <div>Group_ID</div>
+                  </td>
+                  <td>
+                    <div>int</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>21</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Group_Name</div>
+                  </td>
+                  <td>
+                    <div>varchar</div>
+                  </td>
+                  <td>
+                    <div>250</div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>22</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Prov_Ntwrk_Eff_Date</div>
+                  </td>
+                  <td>
+                    <div>datetime</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>23</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>Prov_Ntwrk_Term_Date</div>
+                  </td>
+                  <td>
+                    <div>datetime</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div>YES</div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                  <td>
+                    <div></div>
+                  </td>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default panel-collapsible">
+          <div class="panel-heading">
+            <div class="expandCollapse">
+              <a name="indexes">Index Details</a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <table border="0" cellspacing="1" class="dataTable table-hover">
+              <tbody>
+                <tr>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Key Columns</th>
+                </tr>
+              </tbody>
+              <tr class="clustered">
+                <td>
+                  <div>Clustered</div>
+                </td>
+                <td>
+                  <div>IDX_ID</div>
+                </td>
+                <td>
+                  <div>ID - Active_Indicator - Prov_Ntwrk_Participation_Type1 - Prov_Ntwrk_Pfx_Code - </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>-</div>
+                </td>
+                <td>
+                  <div>IDX_N_ID</div>
+                </td>
+                <td>
+                  <div>Prov_Prdct_State - Program_Type - Product_Type - Prov_Ntwrk_Pfx_Desc - Entity_K - Group_ID - </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<div class="panel panel-default panel-collapsible">
+  <div class="panel-heading">
+    <div class="expandCollapse">
+      <a name="uses">Uses</a>
+    </div>
+  </div>
+  <div class="panel-body">
+    <ul class="DependencyList">
+      <li>
+        <a href="https://caresource.sharepoint.com/sites/SQLAssistance/DataDictionary/DEV72Docs/User_databases/NRTCUSTOMDB/Security/Schemas/CARESOURCE_jmmcabe_CARESOURCE_jmmcabe.aspx">
+          CARESOURCE\jmmcabe
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="footer">
+  <div class="row">
+    <div class="col-sm-4" id="customtext">
+      <div id="projectauthor">CareSource Database Engineering</div>
+    </div>
+    <div class="col-sm-4" id="copyright">Part of the Data Dictionary Project</div>
+    <div class="col-sm-4" id="date">Created: March 14 2023 10:18:28</div>
+  </div>
+</div>
