@@ -14,6 +14,8 @@ flagHeap = False
 IndexCount = 0
 IndexString = ''
 ColumnDescripList = []
+IndexTypeList = []
+IndexNameList = []
 
 c = getSQLCONFIG(configFilePath)
 
@@ -71,6 +73,7 @@ try:
         #print(len(dfColumnDetails))
         
         dfColumnDetails.sort_values(by='ORDINAL_POSITION', inplace=True)
+        
 
       
       
@@ -91,8 +94,8 @@ try:
       if dfTableSpecs.empty:
           print('TableSpec DataFrame is empty!')
           flagHeap = True
-      else:     
-          print(dfTableSpecs) 
+      #else:     
+      #    print(dfTableSpecs) 
 
 
 
@@ -108,32 +111,47 @@ except SQLAlchemyError as e:
 
 
 #
-# dfIndexDetailsCollapsed = pd.DataFrame(columns=['IndexColumnData'])
-i = 1
+if not flagHeap:
+   dfIndexDetailsCollapsed = pd.DataFrame(columns=['IndexColumnData','IndexType'])
 
-while i <= IndexCount:
 
-  newdf = dfIndexDetail.query('IndexID == ' + str(i))
-  #indexName = newdf.iloc[i, newdf.columns.get_loc('IndexName')] 
+   i = 1
 
-  indexName = newdf.iloc[0,2]
+   while i <= IndexCount:
 
-  #df2 = newdf.iloc[:, 1]
+     newdf = dfIndexDetail.query('IndexID == ' + str(i))
+     #indexName = newdf.iloc[i, newdf.columns.get_loc('IndexName')] 
+     #print(newdf)
+
+     indexName = newdf.iloc[0,2]
+     indexType = newdf.iloc[0,5]
+     print('Index Type: ' + str(indexType))
+     #df2 = newdf.iloc[:, 1]
   
-  df2 = newdf.iloc[: ,1].copy()
-  s= df2.str.cat(sep=',')
+     df2 = newdf.iloc[: ,1].copy()
+     s= df2.str.cat(sep=',')
   
-  #print(indexName + ': ' + s)
+     #print(indexName + ': ' + s)
 
-  #abc_series = pd.Series(s)
+     #abc_series = pd.Series(s)
 
-  ColumnDescripList.append(indexName + ': ' + s)
+     ColumnDescripList.append(s)
+     IndexTypeList.append(indexType)
+     IndexNameList.append(indexName)
 
-  dfIndexDetailsCollapsed  = pd.DataFrame([indexName + ': ' + s], columns=['IndexColumnData'])
+     #dfIndexDetailsCollapsed  = pd.DataFrame([indexName + ': ' + s, indexType], columns=['IndexColumnData', 'IndexType'])
        
-  i += 1
+     i += 1
+
+print(IndexTypeList)
+
+dfIndexDetailsCollapsed = pd.DataFrame(
+    {'IndexColumns': ColumnDescripList,
+     'IndexType': IndexTypeList,
+     'IndexName' : IndexNameList
+    })
 
 
-dfIndexDetailsCollapsed = pd.DataFrame(ColumnDescripList, columns=['IndexColumnData'])
 
-print (dfIndexDetailsCollapsed)
+#dfIndexDetailsCollapsed = pd.DataFrame(ColumnDescripList, IndexTypeList)
+

@@ -151,6 +151,10 @@ dfIndexDetailsCollapsed = pd.DataFrame(
 print (dfIndexDetailsCollapsed)
 
 
+
+
+
+
 def addChangedRow(i):
     with a.tr(klass='changed'):
 
@@ -166,9 +170,6 @@ def addChangedRow(i):
         
                if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IndexType')] > 1:
                  a.div(_t='<i class="fas fa-project-diagram text-info"></i>')
-
-               if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IndexType')] is None:
-                 a.div(_t='<i class="fas fa-project-diagram text-info"></i>')                 
                  #titleString = df.iloc[i, df.columns.get_loc('IndexName')] + ' non-clustered'
                  #a.img(a.img(alt='Non-Clustered Index', klass='Index', src='../../../Images/Index.png', title= titleString))
 
@@ -185,8 +186,7 @@ def addChangedRow(i):
             a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IS_NULLABLE')])
 
         with a.td():     
-           if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')] == -999:
-                a.div()
+            a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')])
 
         with a.td():     
             if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IdentityColumn')] == 1:
@@ -212,8 +212,8 @@ def addNormalRow(i):
                if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IndexType')] > 1:
                  a.div(_t='<i class="fas fa-project-diagram text-info"></i>')
                  
-               if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IndexType')] == -999:
-                 a.div()
+                 #titleString = df.iloc[i, df.columns.get_loc('IndexName')] + ' non-clustered'
+                 #a.img(a.img(alt='Non-Clustered Index', klass='Index', src='../../../Images/Index.png', title= titleString))
 
 
         with a.td():   
@@ -229,30 +229,10 @@ def addNormalRow(i):
             a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IS_NULLABLE')])
 
         with a.td():     
-            #a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')])
-            #a.div()
-            #a.div(_t=df.iloc[i, df.columns.get_loc('IndexName')])
-            
-            if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')] == -999:
-                 a.div()
-            #     #titleString = df.iloc[i, df.columns.get_loc('IndexName')] + ' clustered'
-            #     #a.img(alt='Clustered Index', klass='cluster', src='../../../Images/cluster.png', title= titleString)
-        
-            if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')] != -999:
-                 a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')])
-                 
-
+            a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('COLUMN_DEFAULT')])
 
         with a.td():     
-            if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IdentityColumn')] == -999:
-                 a.div()
-            #     #titleString = df.iloc[i, df.columns.get_loc('IndexName')] + ' clustered'
-            #     #a.img(alt='Clustered Index', klass='cluster', src='../../../Images/cluster.png', title= titleString)
-        
-            if dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IdentityColumn')] != -999:
-                 a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IdentityColumn')])
-                 
-            #a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IdentityColumn')])       
+            a.div(_t=dfColumnDetails.iloc[i, dfColumnDetails.columns.get_loc('IdentityColumn')])       
 
 
 def addClusteredIndexRow(i):
@@ -260,19 +240,12 @@ def addClusteredIndexRow(i):
         with a.td():   
             #a.div(_t=dfIndexDetails.iloc[i, dfIndexDetails.columns.get_loc('IndexType')])
             a.div(_t='Clustered')
-        
+
         with a.td():   
-           if dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexName')] != '-999':
-                 a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexName')])
-           else:
-             a.div()
+            a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexName')])
 
-        with a.td():                    
-           if dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexColumns')] != '-999':
-                 a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexColumns')])
-           else:
-              a.div()
-
+        with a.td():   
+            a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexColumns')])
 
 
 def addNCIndexRow(i):
@@ -282,32 +255,10 @@ def addNCIndexRow(i):
             a.div(_t= '-') 
 
         with a.td():   
-           if dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexName')] != '-999':
-                 a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexName')])
-           else:
-             a.div()
+            a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexName')])
 
-        with a.td():                    
-           if dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexColumns')] != '-999':
-                 a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexColumns')])
-           else:
-              a.div()
-
-def StatError(StateRows,TrueRows):
-     
-    # Returns flag based on stat row vs true row count mismatch
-    if StateRows != TrueRows:
-      return True
-    else:
-      return False  
-
-tableCreatedDate = dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('CreatedDate')].strftime("%Y-%m-%d %H:%M:%S")
-tableModifiedDate = dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('ModifiedDate')].strftime("%Y-%m-%d %H:%M:%S")
-StatRowCount  = 0
-TrueRowCount = 0
-StatRowCount = dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('StatRowCount')]
-TrueRowCount = dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('TrueRowCount')]
-      
+        with a.td():   
+            a.div(_t=dfIndexDetailsCollapsed.iloc[i, dfIndexDetailsCollapsed.columns.get_loc('IndexColumns')])            
 
 
 a = Airium()
@@ -317,99 +268,55 @@ with a.html(id="index"):
     with a.head():
         a.meta(charset="utf-8")
         a.title(_t="dbo.PaymentSettlementClaims")
-        a.link(href='https://cdn.metroui.org.ua/v4/css/metro-all.min.css', rel='stylesheet')
         a.link(href='../../../Style/Master.css', rel='stylesheet', type='text/css')
         a.link(href='../../../vendor/fontawesome/all.min.css', rel='stylesheet', type='text/css' )
-        
         a.script(src='../../../Scripts/jquery-1.9.1.js', type='text/javascript')
         a.script(src='../../../Scripts/sections.js', type='text/javascript')
         a.script(src='../../../Scripts/sortable.min.js', type='text/javascript')
 
 
-        
-    
     with a.body():
         with a.div(id='wrap'):
             with a.div(id='container'):
                 with a.div(id='top-header', klass='image-text'):
                        a.img(alt='expanded', src='../../../Images/tableCS.png', style='')
-                       a('<h1 style="color:gray; background-color: #ddbbff;border-radius: 6px;width: 1200px;box-shadow: 2px 2px 20px 5px #ddbbff">' + currentTableName +'</h1>')
+                       a('<h1 style="color:gray; background-color: #ddbbff;border-radius: 6px;width: 1200px;box-shadow: 2px 2px 20px 5px #ddbbff">dbo.Network_Ops_Provider_Network_Prefix_Info</h1>')
 
                 #with a.div(id='pageTitle'):
                     
                     
                     
-                with a.div(klass='panel panel-default', style='background-color: #444a77'):
+                with a.div(klass='panel panel-default panel-collapsible'):
                     with a.div(klass='panel-heading'):
-                        with a.div():
+                        with a.div(klass='expandCollapse'):
                             #a.img(alt='collapsed', klass='collapsed', src='../../../Images/collapsed.png', style='display:none;', title='collapsed')
                             #a.img(alt='expanded', klass='expanded', src='../../../Images/expanded.png', style='', title='expanded')
-                            a.a(name='properties', _t='Table Details')
+                            a.a(name='properties', _t='Table Properties')
                     with a.div(klass='panel-body'):
+                        with a.table(border='0', cellspacing='1', klass='dataTable table-hover'):
+                            with a.tbody():
+                                #with a.tr():
+                                    #a.th(_t='Property')
+                                    #a.th(_t='Value')
+                                #with a.tr():
+                                    #a.td(_t='Collation')
+                                    #a.td(_t='Latin1_General_BIN')
+                                with a.tr():
+                                    a.td(_t='Row Count (~)')
+                                    with a.td():
+                                      a.div(_t=dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('PartitionRows')])
+                                with a.tr():
+                                    a.td(_t='Created On')
+                                    with a.td():
+                                      a.div(_t=dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('CreatedDate')])
+                                with a.tr():
+                                    a.td(_t='Last Modified')
+                                    with a.td():
+                                      a.div(_t=dfTableSpecs.iloc[0, dfTableSpecs.columns.get_loc('ModifiedDate')])
 
-                        with a.div(klass='flex-container'):
-                           
-
-
-                           with a.div(klass='flex-item-cap'):
-                              a.i(klass='fas fa-calendar-alt')
-
-                           with a.div(klass='flex-item'):
-                              
-                              a('Created: ' + str(tableCreatedDate))
-                       
-                           
-
-
-                           if StatError(StatRowCount,TrueRowCount):
-                              with a.div(klass='flex-item-cap-warning'):
-                                a.i(klass='fas fa-align-justify fa-spin')
-                              with a.div(klass='flex-item-button-warning'):
-                                 a('Stats: ' +"{:,}".format(StatRowCount)
-                                   + '     Actual: '+"{:,}".format(TrueRowCount))
-                                 
-                           else:
-                              with a.div(klass='flex-item-cap-rows'):
-                                a('Rows')
-                              with a.div(klass='flex-item-button'):
-                                 a('Stats: ' +str(StatRowCount) 
-                                   + '     Actual: '+"{:,}".format(TrueRowCount))  
-                            
-
-
-
-                        with a.div(klass='flex-container'):
-                           
-                           with a.div(klass='flex-item-cap'):
-                              a.i(klass='fas fa-calendar-alt')
-
-                           with a.div(klass='flex-item'):
-                              a('Last Modified: ' + str(tableModifiedDate))
-                        	
-                           with a.div(klass='flex-item-cap-warning'):
-                              a.i(klass='fas fa-table fa-spin')
-                           with a.div(klass='flex-item-button-warning'):
-                              
-                              a('Other Data')
-
-                           #with a.div(klass='flex-item-cap'):
-                           #   a('&nbsp;')
-                           #with a.div(klass='flex-item', style='color: black'):
-                           #   a.i(klass='fas fa-calendar-alt')
-                           #   a('Different Data') 
-
-                           #with a.div(klass='flex-item-cap'):
-                           #   a('&nbsp;')
-                           #with a.div(klass='flex-item', style='color: black'):
-                           #   a.i(klass='fas fa-calendar-alt')
-                           #   a('Different Data') 
-
-
-
-
-                with a.div(klass='panel panel-default'):
+                with a.div(klass='panel panel-default panel-collapsible'):
                     with a.div(klass='panel-heading'):
-                        with a.div():
+                        with a.div(klass='expandCollapse'):
                             #a.img(alt='collapsed', klass='collapsed', src='../../../Images/collapsed.png', style='display:none;', title='collapsed')
                             #a.img(alt='expanded', klass='expanded', src='../../../Images/expanded.png', style='', title='expanded')
                             a.a(name='columns', _t='Column Specifications')

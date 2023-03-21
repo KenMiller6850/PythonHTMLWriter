@@ -28,11 +28,11 @@ now = datetime.now()
 dt_string = now.strftime("%B %d %Y %H:%M:%S")
 #print("date and time =", dt_string)
 
-currentTableName = 'Network_Ops_Provider_Network_Prefix_Info'
-currentSchemaName = 'dbo'
+#currentTableName = 'Network_Ops_Provider_Network_Prefix_Info'
+#currentSchemaName = 'dbo'
 
-#currentTableName = 'CAQH_COB_InboundTransaction'
-#currentSchemaName = 'Enrollment'
+currentTableName = 'CAQH_COB_InboundTransaction'
+currentSchemaName = 'Enrollment'
 #currentSchemaName = 'Enrollment'
 
 #currentTableName = 'Facets_ProviderSetupQualityCheck_Audit_Stg'
